@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define N 5
+
 int main()
 {
 
-    int *tab, i;
-    float suma, srednia;
+    int *tab, i, N;
+    float suma = 0, srednia;
+    printf("Ile liczb?\n");
+    scanf("%d",&N);
     tab = (int*)malloc(N*sizeof(int));
-    printf("Podaj 5 liczb\n");
+    printf("Podaj %d liczb\n",N);
     for (i = 0; i < N; i++)
     {
         scanf("%d", &tab[i]);
@@ -15,5 +17,6 @@ int main()
     }
     srednia = suma / i;
     printf("Srednia arytmetyczna wynosi %f", srednia);
+    free(tab);
     return 0;
 }
