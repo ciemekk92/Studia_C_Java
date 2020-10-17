@@ -1,0 +1,7 @@
+159.A.0.0  / 255.255.0.0-> A- 2 ostatnie cyfry identyfikatora
+określić: adres, adresrozgłoszeniowy, przestrzeń adresowa
+Podsieci: 000, 001, 010, 011, 100
+a) 000:
+adres podsieci: 159.26.0.000|00000/19 -> 159.26.0.0/19
+adres rozgłoszeniowy: 159.26.0.000|11111/19 -> 159.26.0.31/19
+przestrzeń adresowa: 159.26.0.1/19 -> 159.26.0.30/19
