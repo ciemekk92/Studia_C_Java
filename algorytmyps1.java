@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException, FileNotFoundException {
+        // Zad. 1, zestaw D, algorytm II
         // Odczytanie pliku
         ArrayList<Integer> inputFromFile = new ArrayList<Integer>();
         int operationCount = 0;
