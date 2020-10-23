@@ -27,14 +27,16 @@ public class Main {
         // Zapis do pliku
         FileWriter fileWriter = new FileWriter("src/out0101.txt");
         PrintWriter printWriter = new PrintWriter(fileWriter);
-        // Not working
+
+        int[] newtonSymbol = calculateSymbol(nFile, kFile, operationCount);
+
         printWriter.print("Wyniki:\n");
         printWriter.printf("n: %d, k: %d\n", nFile, kFile );
-        printWriter.printf("SN2: %d", calculateSymbol(nFile, kFile));
+        printWriter.printf("SN2: %d, licz: %d", newtonSymbol[0], newtonSymbol[1]);
         printWriter.close();
     }
 
-    public static int calculateSymbol (int n, int k) {
+    public static int[] calculateSymbol (int n, int k, int count) {
 
         if (k > (n - k)) {
             k = n - k;
@@ -43,7 +45,8 @@ public class Main {
         for (int i = 0; i < k; i++) {
             symbol = symbol * (n - i);
             symbol = symbol / (i + 1);
+            count++;
         }
-        return symbol;
+        return new int[] {symbol, count};
     }
 }
