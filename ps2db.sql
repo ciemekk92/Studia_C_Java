@@ -48,9 +48,24 @@ WHERE PROJECT.PRONO=IMPLPROJECT.PRONO AND EXTRACT(MONTH FROM START_DATE)=1 AND E
 
 --10. Pobrać 4 pierwsze rekordy z tabeli z widełkami wynagrodzeń. Sprawdzić
 --wpływ klauzuli Order by na wynik zapytania.
+SELECT ENAME, LOSAL, SAL, HISAL
+FROM EMP, SALGRADE
+WHERE SAL>= LOSAL AND SAL <=HISAL AND ROWNUM<=4
+ORDER BY ENAME;
+
 --11. Zamienić wszystkie literki E w imionach pracowników na a przy pomocy
 --funkcji translate.
+SELECT ENAME, TRANSLATE(ENAME, 'E', 'a')
+FROM EMP;
+
 --12. Uzupełnić z prawej strony wynik kolumny dname znakami x do 15 znaków w
 --polu, kolumnę loc uzupełnić z lewej strony znakiem”-„.
+SELECT RPAD(DNAME,15,'x'), LPAD(LOC,15,'-')
+FROM DEPT;
+
 --13. Dla każdego pracownika podać lokalizację jego departamentu z pominiętym
---ostatnim znakiem
+--ostatnim znakiem.
+
+SELECT ENAME, LOC, SUBSTR(LOC,0,LENGTH(LOC)-1)
+FROM EMP e, DEPT d
+WHERE e.DEPTNO=d.DEPTNO;
